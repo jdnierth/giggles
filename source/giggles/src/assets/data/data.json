@@ -1,7 +1,8 @@
 [
   {
     "title": "Major change request 1 day before the release",
-    "image": "/assets/images/pretty-muddy.gif",
+    "local": true,
+    "image": "images/pretty-muddy.gif",
     "tags": [
       "cat"
     ]

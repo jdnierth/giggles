@@ -4,7 +4,8 @@
       <div class="col-sm-3" v-for="post in posts">
         <div class="fun-item">
           <h2>{{post.title}}</h2>
-          <img :src="post.image" alt="">
+
+            <img :src="post.image" alt="">
         </div>
       </div>
     </div>
