@@ -1,14 +1,12 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <!--<div class="d-flex flex-wrap p3">-->
-      <div class="col-sm" v-for="post in posts">
+      <div class="col-sm-3" v-for="post in posts">
         <div class="fun-item">
           <h2>{{post.title}}</h2>
-          <img :src="post.image" class="embed-responsive" alt="">
+          <img :src="post.image" alt="">
         </div>
       </div>
-      <!--</div>-->
     </div>
   </div>
 </template>
@@ -39,11 +37,9 @@
 </script>
 
 <style scoped lang="scss">
-  h2 {
-  text-align: left;
+.fun-item {
+  img {
+    max-height: 150px;
   }
-
-  .fun-item {
-  borderr:1px solid;
-  }
+}
 </style>

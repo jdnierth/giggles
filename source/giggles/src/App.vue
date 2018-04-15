@@ -2,7 +2,11 @@
   <div id="app">
     <!--<img src="./assets/logo.png" alt="logo"/>-->
     <app-menu></app-menu>
-    <router-view/>
+    <transition appear
+                name="fade"
+                mode="out-in">
+      <router-view/>
+    </transition>
     <app-footer></app-footer>
   </div>
 </template>
@@ -16,6 +20,8 @@
 <style lang="scss">
   /*@import './assets/styles/vendors/bootstrap/bootstrap.scss';*/
   @import './assets/styles/app/main.scss';
+  @import './assets/styles/vendors/animate-css/properties';
+  @import './assets/styles/vendors/animate-css/_fading-entrances/fading-entrances';
 </style>
 
 <style>
@@ -26,4 +32,18 @@
     text-align: center;
     color: #2c3e50;
   }
+
+  /*.fade {*/
+    /*@include './assets/styles/vendors/animate-css/_fading-entrances/fadeIn';*/
+  /*}*/
+  .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter {
+    opacity: 0;
+  }
+  .fade-leave-to {
+    opacity: 0;
+  }
+
 </style>

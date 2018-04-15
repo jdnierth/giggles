@@ -1,7 +1,3 @@
-//$bsPath: '../vendors/bootstrap/';
-$bsPath: "../vendors/bootstrap/";
-
-
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -12,15 +8,15 @@ $bsPath: "../vendors/bootstrap/";
 @import "../vendors/bootstrap/functions";
 @import "../vendors/bootstrap/variables";
 @import "../vendors/bootstrap/mixins";
-//@import "../vendors/bootstrap/root";
-//@import "../vendors/bootstrap/reboot";
+@import "../vendors/bootstrap/root";
+@import "../vendors/bootstrap/reboot";
 @import "../vendors/bootstrap/type";
-//@import "../vendors/bootstrap/images";
+@import "../vendors/bootstrap/images";
 //@import "../vendors/bootstrap/code";
 @import "../vendors/bootstrap/grid";
 //@import "../vendors/bootstrap/tables";
 //@import "../vendors/bootstrap/forms";
-@import "../vendors/bootstrap/buttons";
+//@import "../vendors/bootstrap/buttons";
 @import "../vendors/bootstrap/transitions";
 //@import "../vendors/bootstrap/dropdown";
 //@import "../vendors/bootstrap/button-group";
@@ -45,7 +41,5 @@ $bsPath: "../vendors/bootstrap/";
 @import "../vendors/bootstrap/utilities";
 //@import "../vendors/bootstrap/print";
 
-.container-fluid {
-  max-width: 1024px;
-  border:1px solid red;
-}
+// Custom but global imports
+@import "bs/scaffolding";
