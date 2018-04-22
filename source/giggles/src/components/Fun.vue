@@ -1,11 +1,19 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-3" v-for="post in posts">
-        <div class="fun-item">
-          <h2>{{post.title}}</h2>
+      <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in posts">
+        <div class="d-flex flex-column fun-item-card" :class="post.tags">
+          <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.image + ')' }">
+            <span class="sr-only">{{post.title}}</span>
+            <!-- /.sr-only -->
+          </div>
+          <!-- /.img-wrapper -->
 
-            <img :src="post.image" alt="">
+          <h2>{{post.title}}</h2>
+          <div class="fun-item-card-content">
+            <div v-for="tag in post.tags" class="badge badge-error">{{tag}}</div>
+          </div>
+          <!-- /.fun-item-card-content -->
         </div>
       </div>
     </div>
@@ -19,6 +27,7 @@
     name: 'Fun',
     data() {
       return {
+        backgroundImage: '',
         posts: data
       }
     },
@@ -38,9 +47,57 @@
 </script>
 
 <style scoped lang="scss">
-.fun-item {
-  img {
-    max-height: 150px;
+  @import "../assets/styles/app/main";
+  @import "../assets/styles/vendors/bootstrap/badge";
+
+  .fun-item {
+    $body-spacing-side: 10px;
+    margin-bottom: 20px;
+
+    .fun-item-card {
+      background-color: white;
+      border-top: 5px solid #00b3ee;
+      border-color: inherit;
+      box-shadow: 1px 1px 3px darkgray;
+      height: 100%;
+      justify-content: space-between;
+      overflow: hidden;
+      padding-bottom: 20px;
+
+      &.it {
+        border-color:#00b3ee;
+      }
+
+      &.physics {
+        border-color: #e83e8c;
+      }
+
+      h2 {
+        font-size: 1em;
+        font-weight: bold;
+        padding: $body-spacing-side $body-spacing-side 0 $body-spacing-side;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .img-wrapper {
+        display: block;
+        background-position: center center;
+        background-size: cover;
+        height: 180px;
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+
+    .fun-item-card-content {
+      padding: 5px $body-spacing-side;
+    }
+
+    .badge {
+      align-self: flex-end;
+    }
+
   }
-}
+
 </style>

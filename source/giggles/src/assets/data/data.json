@@ -2,51 +2,61 @@
   {
     "title": "Major change request 1 day before the release",
     "local": true,
-    "image": "images/pretty-muddy.gif",
+    "image": "static/images/pretty-muddy.gif",
     "tags": [
       "cat"
     ]
   },
   {
-    "title": "Overengineering 2",
-    "image": "http://i.imgur.com/28ZJjXE.gif",
+    "title": "AAAAAAAA",
+    "image": "static/images/screaming-capsicum-1.jpg",
+    "tags": [
+      "scream",
+      "it"
+    ]
+  },
+  {
+    "title": "Client request something impossible",
+    "image": "static/images/client-request.gif",
+    "tags": [
+      "dog"
+    ]
+  },
+  {
+    "title": "Understanding the deployment process for IOS apps",
+    "image": "static/images/understanding-deployment-processes-for-apple.gif",
     "tags": [
       "it"
+    ]
+  },
+  {
+    "title": "This CSS feature is not supported in this browser",
+    "image": "static/images/css-doesn-t-work.gif",
+    "tags": [
+      "it"
+    ]
+  },
+  {
+    "title": "Selling an idea before knowing if it'll work",
+    "image": "static/images/lucky.gif",
+    "tags": [
+      "it"
+    ]
+  },
+  {
+    "title": "Dealing with an unmotivated team",
+    "image": "static/images/no-energy.gif",
+    "tags": [
+      "it",
+      "dog"
     ]
   },
   {
     "title": "Fun 2",
     "image": "https://southcoastherald.co.za/wp-content/uploads/sites/52/2017/05/giphy.gif",
     "tags": [
-      "dog"
-    ]
-  },
-  {
-    "title": "Overengineering",
-    "image": "http://i.imgur.com/28ZJjXE.gif",
-    "tags": [
+      "physics",
       "it"
-    ]
-  },
-  {
-    "title": "Fun 1",
-    "image": "https://southcoastherald.co.za/wp-content/uploads/sites/52/2017/05/giphy.gif",
-    "tags": [
-      "cat"
-    ]
-  },
-  {
-    "title": "Overengineering 2",
-    "image": "http://i.imgur.com/28ZJjXE.gif",
-    "tags": [
-      "it"
-    ]
-  },
-  {
-    "title": "Fun 2",
-    "image": "https://southcoastherald.co.za/wp-content/uploads/sites/52/2017/05/giphy.gif",
-    "tags": [
-      "dog"
     ]
   },
   {

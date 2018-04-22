@@ -44,3 +44,8 @@
 // Custom but global imports
 @import "bs/scaffolding";
 @import "variables";
+@import "themes";
+
+body {
+  background-color: #efefef;
+}
