@@ -19,7 +19,7 @@
     "title": "Client request something impossible",
     "image": "static/images/client-request.gif",
     "tags": [
-      "dog"
+      "it"
     ]
   },
   {
@@ -47,15 +47,17 @@
     "title": "Dealing with an unmotivated team",
     "image": "static/images/no-energy.gif",
     "tags": [
-      "it",
-      "dog"
+      "dog",
+      "it"
     ]
   },
   {
-    "title": "Fun 2",
+    "title": "Tweaking code until it fits",
     "image": "https://southcoastherald.co.za/wp-content/uploads/sites/52/2017/05/giphy.gif",
     "tags": [
+      "animal",
       "physics",
+      "cat",
       "it"
     ]
   },

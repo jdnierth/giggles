@@ -1,15 +1,13 @@
-.it {
-  background-color: #00b3ee;
-  border-color: #00b3ee;
-}
+@mixin border-theme() {
+  &.it {
+    border-color: #00b3ee;
+  }
 
-.animal {
-  background-color: #7a43b6;
-  border-color: #7a43b6;
-}
+  &.animal {
+    border-color: #7a43b6;
+  }
 
-.physics {
-  background-color: #e83e8c;
-  border-color: #e83e8c;
+  &.physics {
+    border-color: #e83e8c;
+  }
 }
-

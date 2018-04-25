@@ -57,20 +57,13 @@
     .fun-item-card {
       background-color: white;
       border-top: 5px solid #00b3ee;
-      border-color: inherit;
       box-shadow: 1px 1px 3px darkgray;
       height: 100%;
       justify-content: space-between;
       overflow: hidden;
       padding-bottom: 20px;
 
-      &.it {
-        border-color:#00b3ee;
-      }
-
-      &.physics {
-        border-color: #e83e8c;
-      }
+      @include border-theme();
 
       h2 {
         font-size: 1em;
