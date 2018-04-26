@@ -3,7 +3,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12">
-
           <div v-if="post">
             <h1 class="text-center">{{post.title}}</h1>
             <img :src="'../../'+post.image" :alt="post.title">
