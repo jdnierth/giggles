@@ -25,4 +25,7 @@
   .logo {
     max-height: 40px;
   }
+  .navbar {
+    margin-bottom: 40px;
+  }
 </style>

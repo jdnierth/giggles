@@ -1,19 +1,20 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in posts">
+      <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in posts" >
         <div class="d-flex flex-column fun-item-card" :class="post.tags">
-          <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.image + ')' }">
-            <span class="sr-only">{{post.title}}</span>
-            <!-- /.sr-only -->
-          </div>
-          <!-- /.img-wrapper -->
+          <router-link :to="{name:'FunDetail', params: {id: post.id}}">
+            <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.image + ')' }">
+              <span class="sr-only">
+                {{post.title}}
+              </span><!-- /.sr-only -->
+            </div><!-- /.img-wrapper -->
+          </router-link>
 
           <h2>{{post.title}}</h2>
           <div class="fun-item-card-content">
-            <div v-for="tag in post.tags" class="badge badge-error">{{tag}}</div>
-          </div>
-          <!-- /.fun-item-card-content -->
+            <div v-for="tag in post.tags" class="badge badge-success" :class="post.tags">{{tag}}</div>
+          </div><!-- /.fun-item-card-content -->
         </div>
       </div>
     </div>
@@ -54,7 +55,9 @@
     $body-spacing-side: 10px;
     margin-bottom: 20px;
 
+
     .fun-item-card {
+      @include border-theme();
       background-color: white;
       border-top: 5px solid #00b3ee;
       box-shadow: 1px 1px 3px darkgray;
@@ -63,7 +66,6 @@
       overflow: hidden;
       padding-bottom: 20px;
 
-      @include border-theme();
 
       h2 {
         font-size: 1em;
@@ -81,16 +83,22 @@
         overflow: hidden;
         width: 100%;
       }
+
     }
 
     .fun-item-card-content {
       padding: 5px $body-spacing-side;
     }
 
-    .badge {
-      align-self: flex-end;
-    }
 
+    .badge {
+      @include background-theme();
+      align-self: flex-end;
+
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
   }
 
 </style>

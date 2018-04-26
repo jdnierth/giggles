@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "Major change request 1 day before the release",
     "local": true,
     "image": "static/images/pretty-muddy.gif",
@@ -8,6 +9,7 @@
     ]
   },
   {
+    "id": 2,
     "title": "AAAAAAAA",
     "image": "static/images/screaming-capsicum-1.jpg",
     "tags": [
@@ -16,6 +18,7 @@
     ]
   },
   {
+    "id": 3,
     "title": "Client request something impossible",
     "image": "static/images/client-request.gif",
     "tags": [
@@ -23,6 +26,7 @@
     ]
   },
   {
+    "id": 4,
     "title": "Understanding the deployment process for IOS apps",
     "image": "static/images/understanding-deployment-processes-for-apple.gif",
     "tags": [
@@ -30,6 +34,7 @@
     ]
   },
   {
+    "id": 5,
     "title": "This CSS feature is not supported in this browser",
     "image": "static/images/css-doesn-t-work.gif",
     "tags": [
@@ -37,6 +42,7 @@
     ]
   },
   {
+    "id": 6,
     "title": "Selling an idea before knowing if it'll work",
     "image": "static/images/lucky.gif",
     "tags": [
@@ -44,6 +50,7 @@
     ]
   },
   {
+    "id": 7,
     "title": "Dealing with an unmotivated team",
     "image": "static/images/no-energy.gif",
     "tags": [
@@ -52,6 +59,7 @@
     ]
   },
   {
+    "id": 8,
     "title": "Tweaking code until it fits",
     "image": "https://southcoastherald.co.za/wp-content/uploads/sites/52/2017/05/giphy.gif",
     "tags": [
@@ -62,6 +70,7 @@
     ]
   },
   {
+    "id": 9,
     "title": "Overengineering",
     "image": "http://i.imgur.com/28ZJjXE.gif",
     "tags": [

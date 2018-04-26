@@ -19,7 +19,7 @@
 
 <style lang="scss">
   footer {
-    background-color: lightblue;
+    background-color: white;
     padding: 10px 0;
   }
 </style>
