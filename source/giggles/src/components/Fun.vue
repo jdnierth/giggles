@@ -1,24 +1,27 @@
 <template>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in posts" >
-        <div class="d-flex flex-column fun-item-card" :class="post.tags">
-          <router-link :to="{name:'FunDetail', params: {id: post.id}}">
-            <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.image + ')' }">
+  <div class="fun">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in posts">
+          <div class="d-flex flex-column fun-item-card" :class="post.tags">
+            <router-link :to="{name:'FunDetail', params: {id: post.id}}">
+              <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.image + ')' }">
               <span class="sr-only">
                 {{post.title}}
               </span><!-- /.sr-only -->
-            </div><!-- /.img-wrapper -->
-          </router-link>
+              </div><!-- /.img-wrapper -->
+            </router-link>
 
-          <h2>{{post.title}}</h2>
-          <div class="fun-item-card-content">
-            <div v-for="tag in post.tags" class="badge badge-success" :class="post.tags">{{tag}}</div>
-          </div><!-- /.fun-item-card-content -->
+            <h2>{{post.title}}</h2>
+            <div class="fun-item-card-content">
+              <div v-for="tag in post.tags" class="badge badge-success" :class="post.tags">{{tag}}</div>
+            </div><!-- /.fun-item-card-content -->
+          </div><!-- /.d-flex -->
         </div>
-      </div>
-    </div>
+      </div><!-- /.row -->
+    </div><!--  /.container-fluid -->
   </div>
+  <!-- /.fun -->
 </template>
 
 <script>
@@ -55,7 +58,6 @@
     $body-spacing-side: 10px;
     margin-bottom: 20px;
 
-
     .fun-item-card {
       @include border-theme();
       background-color: white;
@@ -65,7 +67,6 @@
       justify-content: space-between;
       overflow: hidden;
       padding-bottom: 20px;
-
 
       h2 {
         font-size: 1em;
@@ -89,7 +90,6 @@
     .fun-item-card-content {
       padding: 5px $body-spacing-side;
     }
-
 
     .badge {
       @include background-theme();
