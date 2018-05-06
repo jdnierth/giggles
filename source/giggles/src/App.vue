@@ -24,9 +24,7 @@
   @import './assets/styles/app/main.scss';
   @import './assets/styles/vendors/animate-css/properties';
   @import './assets/styles/vendors/animate-css/_fading-entrances/fading-entrances';
-</style>
 
-<style>
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     color: #2c3e50;
@@ -37,16 +35,8 @@
     padding-bottom: 30px;
   }
 
-  .fade-leave-active {
-    transition: opacity .5s;
-  }
-
-  .fade-enter {
-    opacity: 0;
-  }
-
-  .fade-leave-to {
-    opacity: 0;
+  .fade-enter-active {
+    @include fadeIn(3s,3s,null);
   }
 
 </style>
