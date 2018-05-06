@@ -14,6 +14,7 @@
       </div>
       <!-- /.row -->
     </div>
+
   </footer>
 </template>
 
