@@ -52,8 +52,11 @@
   }
 </script>
 
-<style scoped lang="scss">
-  @import "../assets/styles/app/main";
+<style lang="scss">
+  @import "../assets/styles/vendors/bootstrap/functions";
+  @import "../assets/styles/vendors/bootstrap/variables";
+  @import "../assets/styles/vendors/bootstrap/mixins";
+  @import "../assets/styles/app/themes";
   @import "../assets/styles/vendors/bootstrap/badge";
 
   .fun-item {
@@ -67,7 +70,7 @@
     .fun-item-card {
       @include border-theme();
       background-color: white;
-      border-top: 5px solid #00b3ee;
+      border-bottom: 5px solid #00b3ee;
       box-shadow: 1px 1px 3px darkgray;
       height: 100%;
       justify-content: space-between;
