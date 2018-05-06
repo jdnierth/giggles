@@ -21,7 +21,13 @@
   </div>
 </template>
 
-<style>
+<style scoped lang="scss">
+  @import '../../assets/styles/vendors/bootstrap/functions';
+  @import '../../assets/styles/vendors/bootstrap/variables';
+  @import "../../assets/styles/vendors/bootstrap/mixins/breakpoints";
+  @import "../../assets/styles/vendors/bootstrap/mixins/hover";
+  @import "../../assets/styles/vendors/bootstrap/mixins/border-radius";
+  @import "../../assets/styles/vendors/bootstrap/navbar";
   .logo {
     max-height: 40px;
   }
