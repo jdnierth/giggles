@@ -2,7 +2,14 @@
   <div class="fun">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in posts">
+        <div class="col-sm-12">
+          <input type="search" v-model="search">
+        </div>
+        <!-- /.col-sm-12 -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredPosts">
           <div class="fun-item-card" :class="post.tags">
             <router-link :to="{name:'FunDetail', params: {id: post.id}}">
               <div class="d-flex flex-column justify-content-between">
@@ -34,7 +41,15 @@
     data() {
       return {
         backgroundImage: '',
-        posts: data
+        posts: data,
+        search:''
+      }
+    },
+    computed: {
+      filteredPosts() {
+        return this.posts.filter((post) => {
+          return post.title.match(this.search);
+        })
       }
     },
     created() {
