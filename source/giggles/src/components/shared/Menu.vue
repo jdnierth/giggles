@@ -5,16 +5,92 @@
 
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
+      <b-navbar-brand href="#" style="color:white;">
+        <!--<img src="../../../static/images/logo.svg" alt="Giggles" width="80px" style="color:white">-->
+        <svg version="1.1" id="smiley" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<path class="mouth" d="M362.902,212.507c-3.027-1.254-6.51-0.56-8.826,1.756c-26.196,26.201-61.026,40.63-98.075,40.63
+			c-37.049,0-71.881-14.429-98.082-40.63c-2.317-2.317-5.799-3.008-8.825-1.756c-3.027,1.254-4.999,4.207-4.999,7.482v50.199
+			c0,33.885,15.1,65.561,41.422,86.901c19.84,16.119,44.873,24.996,70.487,24.996c25.615,0,50.647-8.877,70.481-24.991
+			c3.045-2.469,5.956-5.094,8.636-7.786c21.139-21.125,32.78-49.224,32.78-79.12v-50.199
+			C367.901,216.713,365.929,213.761,362.902,212.507z M256.003,365.89c-19.446,0-38.49-5.992-54.393-16.979
+			c6.793-8.3,17-13.255,27.971-13.255c7.851,0,15.315,2.469,21.583,7.142c2.871,2.139,6.808,2.139,9.678,0
+			c6.269-4.672,13.728-7.142,21.573-7.142c10.97,0,21.179,4.955,27.979,13.258C294.495,359.897,275.45,365.89,256.003,365.89z
+			 M323.657,337.868c-0.247,0.248-0.506,0.493-0.758,0.741c-9.842-11.997-24.617-19.15-40.484-19.15
+			c-9.403,0-18.428,2.453-26.412,7.14c-7.985-4.686-17.013-7.14-26.422-7.14c-15.873,0-30.648,7.154-40.482,19.154
+			c-17.035-16.608-27.212-38.815-28.632-62.648c27.943,21.922,61.737,32.89,95.535,32.89c33.791,0,67.576-10.965,95.513-32.877
+			C350.127,299.366,340.377,321.16,323.657,337.868z M351.705,254.421c-53.449,50.989-137.955,50.99-191.414,0V238.01
+			c27.187,21.447,60.557,33.08,95.711,33.08c35.156,0,68.521-11.631,95.703-33.078V254.421z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path class="a" d="M471.781,186.671c-14.152-43.991-42.135-83.437-79.182-111.472c-39.588-29.958-86.821-45.793-136.596-45.793
+			c-49.779,0-97.017,15.835-136.606,45.793c-37.047,28.034-65.032,67.482-79.184,111.474C17.02,193.364,0,214.768,0,240.087
+			c0,22.231,13.12,41.445,32.019,50.333c7.971,52.248,34.122,100.188,73.988,135.422c41.406,36.596,94.676,56.75,149.996,56.75
+			c55.316,0,108.583-20.154,149.987-56.75c39.864-35.234,66.015-83.174,73.987-135.42C498.878,281.536,512,262.32,512,240.087
+			C512,214.766,494.978,193.361,471.781,186.671z M16.197,240.087c0-21.724,17.674-39.398,39.398-39.398h39.398v39.398
+			c0,21.724-17.674,39.398-39.398,39.398C33.871,279.485,16.197,261.812,16.197,240.087z M395.264,413.707
+			c-38.441,33.977-87.898,52.689-139.261,52.689c-51.366,0-100.827-18.713-139.27-52.689
+			c-35.144-31.061-58.801-72.752-67.44-118.392c2.07,0.234,4.17,0.367,6.302,0.367c30.655,0,55.595-24.94,55.595-55.595v-47.497
+			c0-19.354,15.745-35.099,35.1-35.099s35.1,15.745,35.1,35.099c0,4.472,3.626,8.098,8.098,8.098s8.098-3.626,8.098-8.098
+			c0-28.285-23.011-51.296-51.296-51.296c-25.529,0-46.756,18.748-50.651,43.198H58.08c13.773-37.964,38.7-71.864,71.092-96.376
+			c36.753-27.811,80.61-42.512,126.832-42.512c46.217,0,90.071,14.7,126.822,42.512c32.392,24.512,57.318,58.413,71.092,96.376
+			h-37.556c-3.895-24.45-25.122-43.198-50.651-43.198c-28.284,0-51.295,23.011-51.295,51.296c0,4.472,3.625,8.098,8.098,8.098
+			s8.098-3.626,8.098-8.098c0-19.354,15.745-35.099,35.098-35.099c19.354,0,35.1,15.745,35.1,35.099v47.497
+			c0,30.655,24.94,55.595,55.595,55.595c2.13,0,4.23-0.133,6.297-0.367C454.064,340.956,430.408,382.646,395.264,413.707z
+			 M456.405,279.486c-21.724,0-39.398-17.674-39.398-39.398v-39.399h39.398c21.724,0,39.398,17.674,39.398,39.398
+			C495.803,261.811,478.129,279.486,456.405,279.486z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+      </b-navbar-brand>
 
       <b-collapse is-nav id="nav_collapse">
 
         <b-navbar-nav>
           <!--<router-link :to="{name:'Home'}" class="navbar-brand">-->
-            <!--<img class="logo" src="../../assets/logo.png" alt="logo"/>-->
+          <!--<img class="logo" src="../../assets/logo.png" alt="logo"/>-->
           <!--</router-link>-->
-          <router-link class="nav-link" exact active-class="active" :to="{name:'Home'}">Home <span class="sr-only"></span></router-link>
-          <router-link class="nav-link" active-class="active" :to="{name:'About'}">About <span class="sr-only"></span></router-link>
+          <router-link class="nav-link" exact active-class="active" :to="{name:'Home'}">Home <span
+            class="sr-only"></span></router-link>
+          <router-link class="nav-link" active-class="active" :to="{name:'About'}">About <span class="sr-only"></span>
+            <input v-model="search" type="search" placeholder="Search" class="nav-item float-right">
+          </router-link>
+
         </b-navbar-nav>
 
       </b-collapse>
@@ -31,18 +107,23 @@
   // import bCollapse from '../../../node_modules/bootstrap-vue/es/components/collapse'
   // import bDropdown from '../../../node_modules/bootstrap-vue/es/components/dropdown'
   //
-  // export default {
-  //   name: 'Menu',
-  //   components: {
-  //     bNavbarBrand,
-  //     bCollapse}, //Register other components,
-  //   directives: {
-  //     'b-navbar': bNavbar,
-  //     'b-navbar-brand': bNavbarBrand,
-  //     'b-collapse': bCollapse,
-  //     'b-dropdown': bDropdown
-  //   }
-  // }
+  export default {
+    data: function () {
+      return {
+        search: ''
+      }
+    }
+    //   name: 'Menu',
+    //   components: {
+    //     bNavbarBrand,
+    //     bCollapse}, //Register other components,
+    //   directives: {
+    //     'b-navbar': bNavbar,
+    //     'b-navbar-brand': bNavbarBrand,
+    //     'b-collapse': bCollapse,
+    //     'b-dropdown': bDropdown
+    //   }
+  }
 </script>
 <style lang="scss">
   @import '../../assets/styles/vendors/bootstrap/functions';
@@ -51,10 +132,71 @@
   @import "../../assets/styles/vendors/bootstrap/navbar";
 </style>
 <style scoped lang="scss">
+  #smiley {
+
+    max-width: 40px;
+    max-height: 40px;
+    position: relative;
+
+    path {
+      fill: white;
+    }
+
+    .mouth {
+      fill:white;
+      animation: giggle .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;
+      transform-origin: center;
+    }
+    
+    .a {
+      animation: giggle  .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;
+      transform-origin: center;
+    }
+  }
+
   .logo {
     max-height: 40px;
   }
+
   .navbar {
     margin-bottom: 40px;
+  }
+
+  @keyframes giggle {
+    0% {
+      transform: scale(1.0);
+
+    }
+    10% {
+      transform: scale(1.2);
+
+    }
+    50% {
+      transform: scale(0.8);
+
+    }
+    80% {
+      transform: scale(1.2);
+
+    }
+    100% {
+      transform: scale(1.0);
+    }
+  }
+
+  @keyframes turn {
+    0% {
+      transform:rotateZ(0deg);
+
+    }
+    20% {
+      transform:rotateZ(20deg);
+    }
+    80% {
+      transform:rotateZ(-20deg);
+    }
+    100% {
+      transform:rotateZ(0deg);
+    }
   }
 </style>
