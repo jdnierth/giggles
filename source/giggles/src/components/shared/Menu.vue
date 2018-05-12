@@ -88,7 +88,6 @@
           <router-link class="nav-link" exact active-class="active" :to="{name:'Home'}">Home <span
             class="sr-only"></span></router-link>
           <router-link class="nav-link" active-class="active" :to="{name:'About'}">About <span class="sr-only"></span>
-            <input v-model="search" type="search" placeholder="Search" class="nav-item float-right">
           </router-link>
 
         </b-navbar-nav>
@@ -99,32 +98,6 @@
   </div>
 </template>
 
-<script>
-  // import Navbar from '../../../node_modules/bootstrap-vue/src/components/navbar'
-  // import Navbar from '../../../node_modules/bootstrap-vue/src/components/navbar'
-  // import bNavbar from '../../../node_modules/bootstrap-vue/es/components/navbar/navbar'
-  // import bNavbarBrand from '../../../node_modules/bootstrap-vue/es/components/navbar/navbar-brand'
-  // import bCollapse from '../../../node_modules/bootstrap-vue/es/components/collapse'
-  // import bDropdown from '../../../node_modules/bootstrap-vue/es/components/dropdown'
-  //
-  export default {
-    data: function () {
-      return {
-        search: ''
-      }
-    }
-    //   name: 'Menu',
-    //   components: {
-    //     bNavbarBrand,
-    //     bCollapse}, //Register other components,
-    //   directives: {
-    //     'b-navbar': bNavbar,
-    //     'b-navbar-brand': bNavbarBrand,
-    //     'b-collapse': bCollapse,
-    //     'b-dropdown': bDropdown
-    //   }
-  }
-</script>
 <style lang="scss">
   @import '../../assets/styles/vendors/bootstrap/functions';
   @import '../../assets/styles/vendors/bootstrap/variables';
@@ -147,7 +120,7 @@
       animation: giggle .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;
       transform-origin: center;
     }
-    
+
     .a {
       animation: giggle  .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;
       transform-origin: center;
