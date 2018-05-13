@@ -5,12 +5,13 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    posts: []
+    pageSize: 5,
+    allPosts: []
   },
   mutations: {
     setMovies(state, posts) {
       // console.log('SET MOVIES');
-      state.posts = posts;
+      state.allPosts = posts;
     }
   },
   actions: {

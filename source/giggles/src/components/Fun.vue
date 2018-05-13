@@ -43,8 +43,8 @@
     name: 'Fun',
     data() {
       return {
+        pageSize: store.state.pageSize,
         backgroundImage: '',
-        posts: [],
         search: ''
       }
     },
@@ -54,16 +54,23 @@
         'getPosts'
       ]),
       filteredPosts() {
-        return store.state.posts.filter((post) => {
-          // Return all if no search term was provided
-          if (this.search == null || this.search === '') {
-            return post;
+        let page = this.$route.params.page;
+        let pageSize = store.state.pageSize;
 
-            // Return all posts where the title matches the search term.
-          } else if(post && post.title) {
-            return post.title.match(this.search);
-          }
-        })
+        // Return all if no search term was provided
+        if (this.search == null || this.search === '') {
+
+          return store.state.allPosts.slice((page * pageSize)- pageSize, page * pageSize);
+
+          // Return all posts where the title matches the search term.
+        } else {
+          return store.state.allPosts.filter((post) => {
+            if (post && post.title) {
+              return post.title.match(this.search);
+            }
+          });
+        }
+
       }
     },
     created() {
