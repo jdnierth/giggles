@@ -14,7 +14,6 @@
 </template>
 
 <script>
-  import data from '../../assets/data/data.json'
 
   export default {
     name: 'FunDetail',

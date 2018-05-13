@@ -13,13 +13,13 @@
           <div class="fun-item-card" :class="post.tags">
             <router-link :to="{name:'FunDetail', params: {id: post.id}}">
               <div class="d-flex flex-column justify-content-between">
-                <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.image + ')' }">
-                  <span class="sr-only">
-                    {{post.title}}
+                <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.link + ')' }">
+                  <span class="sr-only" v-if="post.hasOwnProperty('title')">
+                  {{post.title}}
                   </span><!-- /.sr-only -->
                 </div><!-- /.img-wrapper -->
 
-                <h2>{{post.title}}</h2>
+                <h2 v-if="post.hasOwnProperty('title')">{{post.title}}</h2>
                 <div class="fun-item-card-content">
                   <div v-for="tag in post.tags" class="badge badge-success" :class="post.tags">{{tag}}</div>
                 </div><!-- /.fun-item-card-content -->
@@ -34,35 +34,38 @@
 </template>
 
 <script>
-  import data from '../assets/data/data.json'
+  // import data from '../assets/data/data.json'
+  import {store} from './data/store'
+  import {mapGetters} from 'vuex'
 
   export default {
     name: 'Fun',
     data() {
       return {
         backgroundImage: '',
-        posts: data,
-        search:''
+        posts: [],
+        search: ''
       }
     },
     computed: {
+      ...mapGetters([
+        // Mounts the "getMovies" getter to the scope of this component.
+        'getMovies'
+      ]),
       filteredPosts() {
-        return this.posts.filter((post) => {
-          return post.title.match(this.search);
+        return store.state.posts.filter((post) => {
+          // Return all if no search term was provided
+          if (this.search == null || this.search === '') {
+            console.log('A');
+            return post;
+          } else if(post && post.title) {
+            return post.title.match(this.search);
+          }
         })
       }
     },
     created() {
-      // let self = this
-      //  this.$http.get('http://localhost:8080/assets/data/data.json')
-      //    .then(response => {
-      //    // get body data
-      //    console.log('response: ', response);
-      //    self.posts = response.body
-      //
-      //  }, error => {
-      //    console.log('Error: ', error)
-      //  })
+      store.dispatch('getMovies');
     }
   }
 </script>
