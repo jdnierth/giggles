@@ -1,7 +1,7 @@
 {
   "name": "giggles",
   "version": "1.0.0",
-  "description": "A project listing funny things based on Vue.js",
+  "description": "A project based on Vue.js listing funny images, memes and gifs.",
   "author": "Jessica Nierth <jnierth@web.de>",
   "private": true,
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
