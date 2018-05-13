@@ -3,9 +3,9 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12">
-          <div v-if="post">
-            <img :src="post.link" :alt="post.title">
-            <h1 class="text-center">{{post.title}}</h1>
+          <div v-if="currentPost">
+            <img :src="currentPost.link" :alt="currentPost.title">
+            <h1 class="text-center">{{currentPost.title}}</h1>
           </div>
         </div><!-- /.col-sm-12 -->
       </div><!-- /.row -->
@@ -21,7 +21,6 @@
     name: 'FunDetail',
     data() {
       return {
-        posts: [],
         post: ''
       }
     },
@@ -30,26 +29,23 @@
         // Mounts the "getPosts" getter to the scope of this component.
         'getPosts'
       ]),
-    },
-    created: function () {
-      let posts;
+      currentPost() {
+        let posts;
+        posts = store.state.allPosts.filter(function (item) {
+          if (item.id === this.$route.params.id) {
+            return item;
+          }
+        }.bind(this));
 
-      if(!store.state.posts.length) {
-        store.dispatch('getPosts');
-        console.log('dispatch');
-        posts = store.state.posts;
-        console.log('posts: ', posts);
-      }
-
-      posts = store.state.posts.filter(function (item) {
-        if (item.id === this.$route.params.id) {
-          return item;
+        if (posts.length) {
+          this.post = posts[0];
         }
-      }.bind(this));
 
-      if (posts.length) {
-        this.post = posts[0];
+        return posts[0];
       }
+    },
+    created() {
+      store.dispatch('getPosts');
     }
   }
 </script>
