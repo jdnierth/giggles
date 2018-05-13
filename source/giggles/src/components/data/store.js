@@ -1,5 +1,7 @@
-import * as Vuex from "vuex";
 import Vue from 'vue';
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
@@ -12,7 +14,7 @@ export const store = new Vuex.Store({
     }
   },
   actions: {
-    getMovies({commit}) {
+    getPosts({commit}) {
       // console.log('ACTIONS: GET MOVIES');
       Vue.http.get("https://api.imgur.com/3/album/SAIe07G",
         {headers: {'Authorization': 'Client-ID a5f17efdb65a808'}})
@@ -26,7 +28,7 @@ export const store = new Vuex.Store({
     }
   },
   getters: {
-    getMovies(state) {
+    getPosts(state) {
       // console.log('GETTERS GET MOVIES: ', state.posts);
       return state.posts
     }

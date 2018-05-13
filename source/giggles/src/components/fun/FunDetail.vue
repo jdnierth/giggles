@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-sm-12">
           <div v-if="post">
+            <img :src="post.link" :alt="post.title">
             <h1 class="text-center">{{post.title}}</h1>
-            <img :src="'../../'+post.image" :alt="post.title">
           </div>
         </div><!-- /.col-sm-12 -->
       </div><!-- /.row -->
@@ -14,17 +14,34 @@
 </template>
 
 <script>
+  import {store} from '../data/store'
+  import {mapGetters} from 'vuex'
 
   export default {
     name: 'FunDetail',
     data() {
       return {
-        posts: data,
+        posts: [],
         post: ''
       }
     },
+    computed: {
+      ...mapGetters([
+        // Mounts the "getPosts" getter to the scope of this component.
+        'getPosts'
+      ]),
+    },
     created: function () {
-      let posts = data.filter(function (item) {
+      let posts;
+
+      if(!store.state.posts.length) {
+        store.dispatch('getPosts');
+        console.log('dispatch');
+        posts = store.state.posts;
+        console.log('posts: ', posts);
+      }
+
+      posts = store.state.posts.filter(function (item) {
         if (item.id === this.$route.params.id) {
           return item;
         }

@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredPosts">
           <div class="fun-item-card" :class="post.tags">
-            <router-link :to="{name:'FunDetail', params: {id: post.id}}">
+            <router-link :to="{name:'FunDetail', params: {posts: filteredPosts, id: post.id}}">
               <div class="d-flex flex-column justify-content-between">
                 <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.link + ')' }">
                   <span class="sr-only" v-if="post.hasOwnProperty('title')">
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+  // For static data testing
   // import data from '../assets/data/data.json'
   import {store} from './data/store'
   import {mapGetters} from 'vuex'
@@ -49,15 +50,16 @@
     },
     computed: {
       ...mapGetters([
-        // Mounts the "getMovies" getter to the scope of this component.
-        'getMovies'
+        // Mounts the "getPosts" getter to the scope of this component.
+        'getPosts'
       ]),
       filteredPosts() {
         return store.state.posts.filter((post) => {
           // Return all if no search term was provided
           if (this.search == null || this.search === '') {
-            console.log('A');
             return post;
+
+            // Return all posts where the title matches the search term.
           } else if(post && post.title) {
             return post.title.match(this.search);
           }
@@ -65,7 +67,7 @@
       }
     },
     created() {
-      store.dispatch('getMovies');
+      store.dispatch('getPosts');
     }
   }
 </script>
