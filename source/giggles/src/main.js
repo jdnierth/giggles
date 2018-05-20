@@ -14,12 +14,14 @@ Vue.use(Navbar)
 import Menu from '@/components/shared/Menu'
 import Footer from '@/components/shared/Footer'
 import Fun from '@/components/Fun'
+import Pagination from '@/components/shared/Pagination'
 
 Vue.config.productionTip = false
 
-Vue.component('app-footer', Footer)
 Vue.component('app-menu', Menu)
+Vue.component('app-footer', Footer)
 Vue.component('app-fun', Fun)
+Vue.component('app-pagination', Pagination)
 
 /* eslint-disable no-new */
 new Vue({

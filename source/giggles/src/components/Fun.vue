@@ -23,6 +23,7 @@
           </div><!-- /.d-flex -->
         </div>
       </div><!-- /.row -->
+      <app-pagination></app-pagination>
     </div><!--  /.container-fluid -->
   </div>
   <!-- /.fun -->
@@ -36,7 +37,6 @@
     name: 'Fun',
     data() {
       return {
-        pageSize: store.state.pageSize,
         backgroundImage: ''
       }
     },
