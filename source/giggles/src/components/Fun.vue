@@ -1,17 +1,12 @@
 <template>
   <div class="fun">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12">
-          <input type="search" v-model="search">
-        </div>
-        <!-- /.col-sm-12 -->
-      </div>
+
       <!-- /.row -->
       <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredPosts">
+        <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredGiggles">
           <div class="fun-item-card" :class="post.tags">
-            <router-link :to="{name:'FunDetail', params: {posts: filteredPosts, id: post.id}}">
+            <router-link :to="{name:'FunDetail', params: {posts: filteredGiggles, id: post.id}}">
               <div class="d-flex flex-column justify-content-between">
                 <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.link + ')' }">
                   <span class="sr-only" v-if="post.hasOwnProperty('title')">
@@ -34,8 +29,6 @@
 </template>
 
 <script>
-  // For static data testing
-  // import data from '../assets/data/data.json'
   import {store} from './data/store'
   import {mapGetters} from 'vuex'
 
@@ -44,37 +37,13 @@
     data() {
       return {
         pageSize: store.state.pageSize,
-        backgroundImage: '',
-        search: ''
+        backgroundImage: ''
       }
     },
     computed: {
-      ...mapGetters([
-        // Mounts the "getPosts" getter to the scope of this component.
-        'getPosts'
-      ]),
-      filteredPosts() {
-        let page = this.$route.params.page;
-        let pageSize = store.state.pageSize;
-
-        // Return all if no search term was provided
-        if (this.search == null || this.search === '') {
-
-          return store.state.allPosts.slice((page * pageSize)- pageSize, page * pageSize);
-
-          // Return all posts where the title matches the search term.
-        } else {
-          return store.state.allPosts.filter((post) => {
-            if (post && post.title) {
-              return post.title.match(this.search);
-            }
-          });
-        }
-
+      filteredGiggles() {
+        return store.state.filteredGiggles;
       }
-    },
-    created() {
-      store.dispatch('getPosts');
     }
   }
 </script>

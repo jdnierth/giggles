@@ -26,12 +26,12 @@
     },
     computed: {
       ...mapGetters([
-        // Mounts the "getPosts" getter to the scope of this component.
-        'getPosts'
+        // Mounts the "getGiggles" getter to the scope of this component.
+        'getGiggles'
       ]),
       currentPost() {
         let posts;
-        posts = store.state.allPosts.filter(function (item) {
+        posts = store.state.allGiggles.filter(function (item) {
           if (item.id === this.$route.params.id) {
             return item;
           }
@@ -45,7 +45,7 @@
       }
     },
     created() {
-      store.dispatch('getPosts');
+      store.dispatch('getGiggles');
     }
   }
 </script>

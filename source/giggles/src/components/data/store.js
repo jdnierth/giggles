@@ -5,33 +5,60 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    pageSize: 5,
-    allPosts: []
+    page: 1,
+    pageSize: 8,
+    allGiggles: [],
+    filteredGiggles: [],
   },
   mutations: {
-    setMovies(state, posts) {
-      // console.log('SET MOVIES');
-      state.allPosts = posts;
+    setGiggles(state, posts) {
+      this.state.allGiggles = posts;
+    },
+    setFilteredGiggles(state, posts) {
+      this.state.filteredGiggles = posts.slice((this.state.page * this.state.pageSize)- this.state.pageSize, this.state.page * this.state.pageSize);
     }
   },
   actions: {
-    getPosts({commit}) {
-      // console.log('ACTIONS: GET MOVIES');
-      Vue.http.get("https://api.imgur.com/3/album/SAIe07G",
-        {headers: {'Authorization': 'Client-ID a5f17efdb65a808'}})
+    getGiggles({commit}) {
+      Vue.http
+        .get("https://api.imgur.com/3/album/SAIe07G",
+        {
+          headers:
+            {
+              'Authorization': 'Client-ID a5f17efdb65a808'
+            }
+        })
         .then(response => {
-          // console.log('RESPONSE: ',JSON.parse(response.bodyText).data.images);
-          commit('setMovies', JSON.parse(response.bodyText).data.images);
-
+          commit('setGiggles', JSON.parse(response.bodyText).data.images);
         }, error => {
           console.error(error);
         });
+    },
+    getFilteredGiggles({commit},payload) {
+      this.state.page = payload.page || 1;
+      let search = payload.search || '';
+
+      // Return all if no search term was provided
+      if (search == null || search === '') {
+        commit('setFilteredGiggles', this.state.allGiggles);
+
+        // Return all posts where the title matches the search term.
+      } else {
+        commit('setFilteredGiggles', this.state.allGiggles.filter((post) => {
+          if (post && post.title) {
+            return post.title.match(search);
+          }
+        })
+        );
+      }
     }
   },
   getters: {
-    getPosts(state) {
-      // console.log('GETTERS GET MOVIES: ', state.posts);
+    getGiggles(state) {
       return state.posts
+    },
+    getFilteredGiggles(state) {
+      return state.filteredGiggles
     }
   }
 })
