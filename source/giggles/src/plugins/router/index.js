@@ -22,6 +22,9 @@ export default new Router({
       path: '/fun/:id',
       name: 'FunDetail',
       component: FunDetail
+    },
+    { path: '*',
+      redirect: '/1'
     }
   ],
   mode: 'history'
