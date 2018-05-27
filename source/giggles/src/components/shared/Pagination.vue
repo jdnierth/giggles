@@ -4,9 +4,9 @@
       tag="li"
       v-for="(page,index) in pages"
       :key="index"
-      :class="{'active':(index === currentPage)}"
+      :class="{'active':(index + 1 === currentPage)}"
       :to="{name: 'Home', params: { page: index + 1 }}"
-      @click.native="updatePage()" replace>
+      @click.native="goToPage()" replace>
         {{index + 1}}
     </router-link>
   </ul>
@@ -20,17 +20,19 @@
     name: 'Pagination',
     data() {
       return {
-        currentPage: 1,
         pageTotal: 0
       }
     },
     computed: {
+      currentPage() {
+        return this.$route.params.page || 1;
+      },
       pages() {
         return Math.round(store.state.pageTotal / store.state.pageSize);
       }
     },
     methods: {
-      updatePage() {
+      goToPage() {
         let self = this;
         store.dispatch('getFilteredGiggles',
           {
@@ -57,11 +59,12 @@
       text-align: center;
 
       &:hover {
-        color: #00b3ee;
+        color: #007bff;
       }
 
       &.active {
         border-bottom: 2px solid black;
+        color: #007bff;
         cursor: auto;
       }
     }
