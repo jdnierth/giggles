@@ -6,8 +6,8 @@
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
       <b-navbar-brand href="#" style="color:white;">
-        <!--<img src="../../../static/images/logo.svg" alt="Giggles" width="80px" style="color:white">-->
-        <svg version="1.1" id="smiley" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <router-link :to="{name:'Home'}">
+          <svg version="1.1" id="smiley" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
           <g>
             <path class="mouth" d="M362.902,212.507c-3.027-1.254-6.51-0.56-8.826,1.756c-26.196,26.201-61.026,40.63-98.075,40.63
@@ -42,16 +42,13 @@
               C495.803,261.811,478.129,279.486,456.405,279.486z"/>
           </g>
         </svg>
-
+        </router-link>
       </b-navbar-brand>
 
       <b-collapse is-nav id="nav_collapse">
 
         <b-navbar-nav
           tag="div">
-          <!--<router-link :to="{name:'Home'}" class="navbar-brand">-->
-          <!--<img class="logo" src="../../assets/logo.png" alt="logo"/>-->
-          <!--</router-link>-->
           <router-link class="nav-link" exact active-class="active" :to="{name:'Home'}">Home <span
             class="sr-only"></span>
           </router-link>
@@ -118,9 +115,7 @@
 </style>
 <style scoped lang="scss">
   #smiley {
-
-    max-width: 40px;
-    max-height: 40px;
+    width: 40px;
     position: relative;
 
     path {
@@ -129,13 +124,13 @@
 
     .mouth {
       fill: white;
-      animation: giggle .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;
-      transform-origin: center;
+      /*animation: giggle .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;*/
+      /*transform-origin: center;*/
     }
 
     .a {
-      animation: giggle .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;
-      transform-origin: center;
+      /*animation: giggle .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;*/
+      /*transform-origin: center;*/
     }
   }
 
@@ -150,17 +145,19 @@
   .navbar-nav {
     width: 100%;
   }
+
   .nav-search {
     justify-self: flex-end;
   }
+
   input {
-    border:1px solid transparent;
+    border: 1px solid transparent;
     padding: 2px 5px;
 
     &:focus,
     &:active {
       outline: 1px solid #20c997;
-      border:1px solid #20c997;
+      border: 1px solid #20c997;
     }
   }
 
