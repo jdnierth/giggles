@@ -11,7 +11,7 @@
       tag="li"
       v-for="(p,index) in noPages"
       :key="index"
-      :class="{'active':(index + 1 === page)}"
+      :class="{'active':(index + 1 == page)}"
       :to="{name: 'Home', params: { page: index + 1 }}"
       @click.native="goToPage()" replace>
         {{index + 1}}<br/>
@@ -30,11 +30,13 @@
   import {store} from '../data/store'
   import {mapGetters} from 'vuex'
 
+  import router from './../../plugins/router'
+
   export default {
     name: 'Pagination',
     data() {
       return {
-        page: 1,
+        page: this.$route.params.page,
         pageTotal: 0
       }
     },
@@ -48,7 +50,22 @@
     },
     computed: {
       noPages() {
-        return Math.round(store.state.pageTotal / store.state.pageSize);
+
+        let noPages = Math.round(store.state.pageTotal / store.state.pageSize);
+
+        // Redirect to page 1 if user is on a higher page.
+        if(this.$route.params.page > noPages) {
+          router.push({ path: '/1' });
+
+          // Refresh filtered view.
+          store.dispatch('getFilteredGiggles',
+            {
+              page: 1,
+              search: store.state.search || ''
+            })
+        }
+
+        return noPages;
       }
     },
     methods: {
