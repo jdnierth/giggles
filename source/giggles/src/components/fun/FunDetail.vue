@@ -51,8 +51,23 @@
 </script>
 
 <style scoped lang="scss">
+
+  @import '../../assets/styles/vendors/bootstrap/functions';
+  @import '../../assets/styles/vendors/bootstrap/variables';
+  @import '../../assets/styles/vendors/bootstrap/mixins';
+
   .fun-detail {
+    h1 {
+      font-size: 24px;
+      margin: 20px auto;
+
+      @include media-breakpoint-up(md) {
+        width: 50%;
+      }
+    }
+
     img {
+      border:5px solid #999;
       display: block;
       margin: 0 auto;
       width: 500px;
