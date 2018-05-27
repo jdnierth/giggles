@@ -5,18 +5,24 @@
       <!-- /.row -->
       <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredGiggles">
-          <div class="fun-item-card" :class="post.tags">
+          <div class="fun-item-card"
+               :class="post.tags">
             <router-link :to="{name:'FunDetail', params: {posts: filteredGiggles, id: post.id}}">
               <div class="d-flex flex-column justify-content-between">
-                <div class="img-wrapper" :style="{ 'background-image': 'url(' + post.link + ')' }">
-                  <span class="sr-only" v-if="post.hasOwnProperty('title')">
+                <div class="img-wrapper"
+                     :style="{ 'background-image': 'url(' + post.link + ')' }">
+                  <span class="sr-only"
+                        v-if="post.hasOwnProperty('title')">
                   {{post.title}}
                   </span><!-- /.sr-only -->
                 </div><!-- /.img-wrapper -->
 
                 <h2 v-if="post.hasOwnProperty('title')">{{post.title}}</h2>
                 <div class="fun-item-card-content">
-                  <div v-for="tag in post.tags" class="badge badge-success" :class="post.tags">{{tag}}</div>
+                  <div v-for="tag in post.tags"
+                       class="badge badge-success"
+                       :class="post.tags">{{tag}}
+                  </div>
                 </div><!-- /.fun-item-card-content -->
               </div><!-- /.d-flex flex-column -->
             </router-link>
