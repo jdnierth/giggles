@@ -47,7 +47,8 @@
 
       <b-collapse is-nav id="nav_collapse">
 
-        <b-navbar-nav>
+        <b-navbar-nav
+          tag="div">
           <!--<router-link :to="{name:'Home'}" class="navbar-brand">-->
           <!--<img class="logo" src="../../assets/logo.png" alt="logo"/>-->
           <!--</router-link>-->
@@ -56,8 +57,12 @@
           </router-link>
           <router-link class="nav-link" active-class="active" :to="{name:'About'}">About <span class="sr-only"></span>
           </router-link>
-          <input type="search" v-model="search">
+
+
         </b-navbar-nav>
+        <div class="nav-link nav-search">
+          <input type="search" v-model="search" placeholder="Search for title">
+        </div>
 
       </b-collapse>
     </b-navbar>
@@ -140,6 +145,27 @@
 
   .navbar {
     margin-bottom: 40px;
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+  .nav-search {
+    justify-self: flex-end;
+  }
+  input {
+    border:1px solid transparent;
+    padding: 2px 5px;
+
+    &:focus,
+    &:active {
+      outline: 1px solid #20c997;
+      border:1px solid #20c997;
+    }
+  }
+
+  ::placeholder {
+    color: #999;
   }
 
   @keyframes giggle {
