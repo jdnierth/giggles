@@ -92,7 +92,7 @@
     mounted() {
       let self = this;
 
-      // TODO: get rid of this ugly timeout
+      // TODO: get rid of this timeout
       setTimeout(function () {
         store.dispatch('getFilteredGiggles',
           {
