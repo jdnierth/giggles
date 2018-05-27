@@ -1,13 +1,27 @@
 <template>
   <ul class="pagination">
     <router-link
+      v-if="(noPages > 0 && currentPage !== 1)"
       tag="li"
-      v-for="(page,index) in pages"
+      :to="{name: 'Home', params: { page: 1 }}"
+      @click.native="goToPage()" replace>
+      <<
+    </router-link>
+    <router-link
+      tag="li"
+      v-for="(page,index) in noPages"
       :key="index"
       :class="{'active':(index + 1 === currentPage)}"
       :to="{name: 'Home', params: { page: index + 1 }}"
       @click.native="goToPage()" replace>
-        {{index + 1}}
+        {{index + 1}}<br/>
+    </router-link>
+    <router-link
+      v-if="noPages > 1"
+      tag="li"
+      :to="{name: 'Home', params: { page: noPages }}"
+      @click.native="goToPage()" replace>
+      >>
     </router-link>
   </ul>
 </template>
@@ -27,7 +41,7 @@
       currentPage() {
         return this.$route.params.page || 1;
       },
-      pages() {
+      noPages() {
         return Math.round(store.state.pageTotal / store.state.pageSize);
       }
     },
