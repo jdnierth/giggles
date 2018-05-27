@@ -1,5 +1,8 @@
-# giggles
-List of funny things
+# Giggles
+Example application on the basis of VueJS that lists funny gif or memes hosted on my private account on [imgmur](https://imgur.com).
+
+# App specific documentation
+[Documentation](https://github.com/jdnierth/giggles/blob/master/source/giggles/README.md)
 
 # VueJS resources
 Difference between dispatch and commit
