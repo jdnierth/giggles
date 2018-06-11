@@ -71,7 +71,7 @@
   @import "../assets/styles/vendors/bootstrap/functions";
   @import "../assets/styles/vendors/bootstrap/variables";
   @import "../assets/styles/vendors/bootstrap/mixins";
-  @import "../assets/styles/app/themes";
+  @import "../assets/styles/app/card";
   @import "../assets/styles/vendors/bootstrap/badge";
 
   .fun-item {
@@ -83,9 +83,9 @@
     }
 
     .fun-item-card {
-      @include border-theme();
-      background-color: white;
-      border-bottom: 5px solid #00b3ee;
+      background-color: darken(#00ffee, 10%);
+      border-bottom: 5px solid #00ffee;
+      @include border-theme(#00ffee);
       box-shadow: 1px 1px 3px darkgray;
       height: 100%;
       justify-content: space-between;
@@ -94,19 +94,21 @@
       transition: all .3s ease-in-out;
 
       &:hover {
-        box-shadow: 5px 5px 15px darkgray;
-        background-color: beige;
+        background-color: #00ffee;
+
+        a {
+          text-decoration: none;
+        }
       }
 
-      a:hover {
-        text-decoration: none;
+      a {
+        color: #fff;
       }
 
       h2 {
         font-size: 1em;
         font-weight: bold;
-        padding: $body-spacing-side $body-spacing-side 0 $body-spacing-side;
-        text-transform: uppercase;
+        padding: 20px $body-spacing-side 0 $body-spacing-side;
         text-align: center;
       }
 
@@ -134,5 +136,7 @@
       }
     }
   }
+
+  @import "../assets/styles/app/themes";
 
 </style>

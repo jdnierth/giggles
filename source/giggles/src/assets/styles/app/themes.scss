@@ -1,39 +1,25 @@
-@mixin border-theme() {
-  &.it,
-  .it {
-    border-color: #00ffee;
-    a {
-      color: #00ffee;
-    }
-  }
-
-  &.animal,
-  .animal {
-    border-color: #7a43b6;
-    a {
-      color: #7a43b6;
-    }
-  }
-
-  &.physics,
-  .physics {
-    border-color: #e83e8c;
-    a {
-      color: #e83e8c;
-    }
-  }
-}
-
-@mixin background-theme() {
+.it {
   &.it {
-    background-color: #00b3ee;
-  }
-
-  &.animal {
-    background-color: #7a43b6;
-  }
-
-  &.physics {
-    background-color: #e83e8c;
+    @include border-theme(#00b3ee);
   }
 }
+
+.management {
+  &.management {
+    @include border-theme(#7a43b6);
+  }
+}
+
+.devops {
+  &.devops {
+    @include border-theme(#e83e8c);
+  }
+}
+
+.support {
+  &.support {
+    @include border-theme(#7FBB40);
+  }
+}
+
+

@@ -31,7 +31,7 @@
   }
 
   .page {
-    min-height:90vh;
+    min-height:60vh;
     padding-bottom: 30px;
   }
 

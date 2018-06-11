@@ -1,0 +1,33 @@
+@mixin border-theme($color:#00b3ee) {
+  background-color: darken($color, 10%);
+  border-color: $color;
+
+  .badge {
+    background-color: #fff;
+    color: darken($color, 10%);
+  }
+
+  &:hover {
+    background-color:$color;
+    box-shadow: 5px 5px 15px darkgray;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+
+@mixin background-theme() {
+  &.it {
+    background-color: #00b3ee;
+  }
+
+  &.animal {
+    background-color: #7a43b6;
+  }
+
+  &.devops {
+    background-color: #e83e8c;
+  }
+}

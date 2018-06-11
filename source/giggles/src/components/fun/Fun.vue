@@ -67,10 +67,11 @@
     }
 
     img {
-      border:5px solid #999;
+      box-shadow: 5px 5px 15px darkgray;
       display: block;
       margin: 0 auto;
       width: 500px;
+      max-height:350px;
       max-width: 100%;
     }
   }
