@@ -6,7 +6,7 @@
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
       <b-navbar-brand href="#" style="color:white;">
-        <router-link :to="{name:'Home'}">
+        <router-link :to="{name:'Home', params:{page:1}}">
           <svg version="1.1" id="smiley" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
           <g>
@@ -49,7 +49,7 @@
 
         <b-navbar-nav
           tag="div">
-          <router-link class="nav-link" exact active-class="active" :to="{name:'Home'}">Home <span
+          <router-link class="nav-link" exact active-class="active" :to="{name:'Home', params:{page:1}}">Home<span
             class="sr-only"></span>
           </router-link>
           <router-link class="nav-link" active-class="active" :to="{name:'About'}">About <span class="sr-only"></span>
@@ -79,6 +79,13 @@
       }
     },
     watch: {
+      $route (to, from){
+        store.dispatch('getFilteredFunStuff',
+          {
+            page: this.$route.params.page,
+            search: this.search
+          })
+      },
       search() {
         store.dispatch('getFilteredFunStuff',
           {
