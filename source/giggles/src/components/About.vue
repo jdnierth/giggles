@@ -5,7 +5,7 @@
 
         <h1>About</h1>
         <p>
-          This page was purely build for educational purposes on the basis of <a href="https://vuejs.org/">VueJS.</a>
+          This page was purely build for educational purposes on the basis of <a href="https://vuejs.org/" target="_blank">VueJS.</a>
         </p>
         <p>
           The contents (copy, images) have been re-used from various sources.
