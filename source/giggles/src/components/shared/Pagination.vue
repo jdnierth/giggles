@@ -5,7 +5,7 @@
       tag="li"
       :to="{name: 'Home', params: { page: 1 }}"
       @click.native="goToPage()" replace>
-      <<
+      &laquo;
     </router-link>
     <router-link
       tag="li"
@@ -21,7 +21,7 @@
       tag="li"
       :to="{name: 'Home', params: { page: noPages }}"
       @click.native="goToPage()" replace>
-      >>
+      &raquo;
     </router-link>
   </ul>
 </template>
@@ -88,7 +88,7 @@
     text-align: center;
 
     li {
-      color: #00b3ee;
+      color: #303030;
       cursor:pointer;
       display: inline-block;
       list-style-type: none;
@@ -100,9 +100,11 @@
       }
 
       &.active {
-        border-bottom: 2px solid black;
-        color: #007bff;
+        background-color: #007bff;
+        color: #fff;
         cursor: auto;
+        margin: 0 2px;
+        padding: 0 5px;
       }
     }
   }

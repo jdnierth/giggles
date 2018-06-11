@@ -31,7 +31,17 @@
 
 <style lang="scss">
   footer {
-    background-color: white;
+    background-color: #303030;
+    color: lighten(#303030,30%);
     padding: 10px 0;
+
+    a {
+      color: lighten(#303030,30%);
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
   }
 </style>
