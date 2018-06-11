@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredGiggles">
           <div class="fun-item-card"
-               :class="post.tags">
+               :class="getTags(post.description) | removeHash">
             <router-link :to="{name:'FunDetail', params: {posts: filteredGiggles, id: post.id}}">
               <div class="d-flex flex-column justify-content-between">
                 <div class="img-wrapper"
@@ -19,7 +19,7 @@
 
                 <h2 v-if="post.hasOwnProperty('title')">{{post.title}}</h2>
                 <div class="fun-item-card-content">
-                  <div v-for="tag in post.tags"
+                  <div v-for="tag in getTags(post.description)"
                        class="badge badge-success"
                        :class="post.tags">{{tag}}
                   </div>
@@ -38,17 +38,30 @@
 <script>
   import {store} from './data/store'
   import {mapGetters} from 'vuex'
+  import {getTags} from '../components/shared/filters/getTags'
+  import {removeHash} from '../components/shared/filters/removeHash'
 
   export default {
     name: 'Fun',
     data() {
       return {
-        backgroundImage: ''
+        backgroundImage: '',
+        tags: []
       }
     },
     computed: {
       filteredGiggles() {
         return store.state.filteredGiggles;
+      }
+    },
+    filters: {
+      removeHash(value) {
+        return removeHash(value);
+      }
+    },
+    methods: {
+      getTags(description) {
+        return getTags(description);
       }
     }
   }
