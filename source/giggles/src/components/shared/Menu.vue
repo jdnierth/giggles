@@ -80,7 +80,7 @@
     },
     watch: {
       search() {
-        store.dispatch('getFilteredGiggles',
+        store.dispatch('getFilteredFunStuff',
           {
             page: this.$route.params.page,
             search: this.search
@@ -89,14 +89,14 @@
     },
     created() {
       // Initialize giggles
-      store.dispatch('getGiggles');
+      store.dispatch('getFunStuff');
     },
     mounted() {
       let self = this;
 
       // TODO: get rid of this timeout
       setTimeout(function () {
-        store.dispatch('getFilteredGiggles',
+        store.dispatch('getFilteredFunStuff',
           {
             page: self.$route.params.page,
             search: ''

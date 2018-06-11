@@ -18,7 +18,7 @@
   import {mapGetters} from 'vuex'
 
   export default {
-    name: 'FunDetail',
+    name: 'Fun',
     data() {
       return {
         post: ''
@@ -26,12 +26,12 @@
     },
     computed: {
       ...mapGetters([
-        // Mounts the "getGiggles" getter to the scope of this component.
-        'getGiggles'
+        // Mounts the "getFunStuff" getter to the scope of this component.
+        'getFunStuff'
       ]),
       currentPost() {
         let posts;
-        posts = store.state.allGiggles.filter(function (item) {
+        posts = store.state.allFunStuffs.filter(function (item) {
           if (item.id === this.$route.params.id) {
             return item;
           }
@@ -45,7 +45,7 @@
       }
     },
     created() {
-      store.dispatch('getGiggles');
+      store.dispatch('getFunStuff');
     }
   }
 </script>

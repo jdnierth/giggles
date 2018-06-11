@@ -4,10 +4,10 @@
 
       <!-- /.row -->
       <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredGiggles">
+        <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredFunStuffs">
           <div class="fun-item-card"
                :class="getTags(post.description) | removeHash">
-            <router-link :to="{name:'FunDetail', params: {posts: filteredGiggles, id: post.id}}">
+            <router-link :to="{name:'Fun', params: {posts: filteredFunStuffs, id: post.id}}">
               <div class="d-flex flex-column justify-content-between">
                 <div class="img-wrapper"
                      :style="{ 'background-image': 'url(' + post.link + ')' }">
@@ -36,13 +36,13 @@
 </template>
 
 <script>
-  import {store} from './data/store'
-  import {mapGetters} from 'vuex'
-  import {getTags} from '../components/shared/filters/getTags'
-  import {removeHash} from '../components/shared/filters/removeHash'
+  import {store} from './data/store';
+  import {mapGetters} from 'vuex';
+  import {getTags} from '../components/shared/filters/getTags';
+  import {removeHash} from '../components/shared/filters/removeHash';
 
   export default {
-    name: 'Fun',
+    name: 'FunList',
     data() {
       return {
         backgroundImage: '',
@@ -50,8 +50,8 @@
       }
     },
     computed: {
-      filteredGiggles() {
-        return store.state.filteredGiggles;
+      filteredFunStuffs() {
+        return store.state.filteredFunStuffs;
       }
     },
     filters: {

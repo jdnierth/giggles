@@ -1,15 +1,15 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/components/Home'
-import About from '@/components/About'
-import FunDetail from '@/components/fun/FunDetail'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/components/Home';
+import About from '@/components/About';
+import Fun from '@/components/fun/Fun';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/:page',
+      path: '/fun-list/:page',
       name: 'Home',
       component: Home
     },
@@ -20,12 +20,13 @@ export default new Router({
     },
     {
       path: '/fun/:id',
-      name: 'FunDetail',
-      component: FunDetail
+      name: 'Fun',
+      component: Fun
     },
-    { path: '*',
-      redirect: '/1'
+    {
+      path: '*',
+      redirect: '/fun-list/1'
     }
   ],
   mode: 'history'
-})
+});

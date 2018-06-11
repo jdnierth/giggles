@@ -1,31 +1,31 @@
 import Vue from 'vue';
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    allGiggles: [],
-    filteredGiggles: [],
+    allFunStuffs: [],
+    filteredFunStuffs: [],
     page: 1,
     pageSize: 8,
     pageTotal: 8,
     search: ''
   },
   mutations: {
-    setGiggles(state, posts) {
+    setFunStuff(state, posts) {
       this.state.pageTotal = posts.length;
-      this.state.allGiggles = posts;
+      this.state.allFunStuffs = posts;
     },
-    setFilteredGiggles(state, posts) {
+    setFilteredFunStuff(state, posts) {
       this.state.pageTotal = posts.length;
-      this.state.filteredGiggles = posts.slice((this.state.page * this.state.pageSize)- this.state.pageSize, this.state.page * this.state.pageSize);
+      this.state.filteredFunStuffs = posts.slice((this.state.page * this.state.pageSize)- this.state.pageSize, this.state.page * this.state.pageSize);
     }
   },
   actions: {
-    getGiggles({commit}) {
+    getFunStuff({commit}) {
       Vue.http
-        .get("https://api.imgur.com/3/album/SAIe07G",
+        .get("https://api.imgur.com/3/album/ZcSPSEZ",
         {
           headers:
             {
@@ -33,22 +33,22 @@ export const store = new Vuex.Store({
             }
         })
         .then(response => {
-          commit('setGiggles', JSON.parse(response.bodyText).data.images);
+          commit('setFunStuff', JSON.parse(response.bodyText).data.images);
         }, error => {
           console.error(error);
         });
     },
-    getFilteredGiggles({commit},payload) {
+    getFilteredFunStuff({commit},payload) {
       this.state.page = payload.page || 1;
       this.state.search = payload.search || '';
 
       // Return all if no search term was provided
       if (this.state.search == null || this.state.search === '') {
-        commit('setFilteredGiggles', this.state.allGiggles);
+        commit('setFilteredFunStuff', this.state.allFunStuffs);
 
         // Return all posts where the title matches the search term.
       } else {
-        commit('setFilteredGiggles', this.state.allGiggles.filter((post) => {
+        commit('setFilteredFunStuff', this.state.allFunStuffs.filter((post) => {
           if (post && post.title) {
             return post.title.match(this.state.search);
           }
@@ -58,11 +58,11 @@ export const store = new Vuex.Store({
     }
   },
   getters: {
-    getGiggles(state) {
+    getFunStuff(state) {
       return state.posts
     },
-    getFilteredGiggles(state) {
-      return state.filteredGiggles
+    getFilteredFunStuff(state) {
+      return state.filteredFunStuffs
     }
   }
-})
+});
