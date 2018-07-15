@@ -64,5 +64,8 @@ export const store = new Vuex.Store({
     getFilteredFunStuff(state) {
       return state.filteredFunStuffs
     }
+  },
+  mounted() {
+    this.getFunStuff()
   }
 });
