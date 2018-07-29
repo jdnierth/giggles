@@ -37,7 +37,6 @@
 
 <script>
   import {store} from './data/store';
-  import {mapGetters} from 'vuex';
   import {getTags} from '../components/shared/filters/getTags';
   import {removeHash} from '../components/shared/filters/removeHash';
 
@@ -51,6 +50,13 @@
     },
     computed: {
       filteredPosts() {
+        let self = this;
+        store.dispatch('getFilteredPosts',
+          {
+            page: self.$route.params.page,
+            search: store.state.search || ''
+          });
+
         return store.state.filteredPosts;
       }
     },
@@ -73,6 +79,7 @@
   @import "../assets/styles/vendors/bootstrap/mixins";
   @import "../assets/styles/app/card";
   @import "../assets/styles/vendors/bootstrap/badge";
+  @import "../assets/styles/app/themes";
 
   .fun-item {
     $body-spacing-side: 10px;
@@ -136,7 +143,4 @@
       }
     }
   }
-
-  @import "../assets/styles/app/themes";
-
 </style>

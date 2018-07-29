@@ -25,10 +25,6 @@
       }
     },
     computed: {
-      ...mapGetters([
-        // Mounts the "getFunStuff" getter to the scope of this component.
-        'getFunStuff'
-      ]),
       currentPost() {
         let posts;
         posts = store.state.allFunStuffs.filter(function (item) {
@@ -43,9 +39,6 @@
 
         return posts[0];
       }
-    },
-    created() {
-      store.dispatch('getFunStuff');
     }
   }
 </script>

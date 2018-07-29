@@ -17,13 +17,13 @@ export const store = new Vuex.Store({
       this.state.pageTotal = posts.length;
       this.state.allFunStuffs = posts;
     },
-    getFilteredPosts(state, posts) {
+    setFilteredPosts(state, posts) {
       this.state.pageTotal = posts.length;
       this.state.filteredPosts = posts.slice((this.state.page * this.state.pageSize)- this.state.pageSize, this.state.page * this.state.pageSize);
     }
   },
   actions: {
-    getFunStuff({commit}) {
+    getPosts({commit}) {
       Vue.http
         .get("https://api.imgur.com/3/album/ZcSPSEZ",
         {
@@ -33,39 +33,20 @@ export const store = new Vuex.Store({
             }
         })
         .then(response => {
-          commit('setPosts', JSON.parse(response.bodyText).data.images);
+            commit('setPosts', JSON.parse(response.bodyText).data.images);
         }, error => {
           console.error(error);
         });
     },
-    getFilteredFunStuff({commit},payload) {
+    getFilteredPosts({commit},payload) {
       this.state.page = payload.page || 1;
       this.state.search = payload.search || '';
 
-      // Return all if no search term was provided
-      if (this.state.search == null || this.state.search === '') {
-        commit('getFilteredPosts', this.state.allFunStuffs);
-
-        // Return all posts where the title matches the search term.
-      } else {
-        commit('getFilteredPosts', this.state.allFunStuffs.filter((post) => {
-          if (post && post.title) {
-            return post.title.match(this.state.search);
-          }
-        })
-        );
-      }
+      commit('setFilteredPosts', this.state.allFunStuffs.filter((post) => {
+        if (post && post.title) {
+          return post.title.match(this.state.search);
+        }
+      }));
     }
-  },
-  getters: {
-    getFunStuff(state) {
-      return state.posts
-    },
-    getFilteredFunStuff(state) {
-      return state.filteredPosts
-    }
-  },
-  mounted() {
-    this.getFunStuff()
   }
 });

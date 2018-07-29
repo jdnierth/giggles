@@ -1,29 +1,34 @@
 .it {
-  &.it {
+  &.it,
+  &.fun-item-card.it {
     @include border-theme(#00b3ee);
   }
 }
 
 .management {
-  &.management {
+  &.management,
+  &.fun-item-card.management {
     @include border-theme(#7a43b6);
   }
 }
 
 .devops {
-  &.devops {
+  &.devops,
+  &.fun-item-card.devops {
     @include border-theme(#e83e8c);
   }
 }
 
 .support {
-  &.support {
+  &.support,
+  &.fun-item-card.support {
     @include border-theme(#7FBB40);
   }
 }
 
 .programming {
-  &.programming {
+  &.programming,
+  &.fun-item-card.programming {
     @include border-theme(#FF4500);
   }
 }

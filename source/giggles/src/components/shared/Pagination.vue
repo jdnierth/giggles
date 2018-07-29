@@ -58,11 +58,11 @@
           router.push({ path: '/1' });
 
           // Refresh filtered view.
-          store.dispatch('getFilteredFunStuff',
-            {
-              page: 1,
-              search: store.state.search || ''
-            })
+          // store.dispatch('getFilteredPosts',
+          //   {
+          //     page: 1,
+          //     search: store.state.search || ''
+          //   })
         }
 
         return noPages;
@@ -71,7 +71,7 @@
     methods: {
       goToPage() {
         let self = this;
-        store.dispatch('getFilteredFunStuff',
+        store.dispatch('getFilteredPosts',
           {
             page: self.$route.params.page,
             search: store.state.search || ''

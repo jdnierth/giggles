@@ -46,7 +46,6 @@
       </b-navbar-brand>
 
       <b-collapse is-nav id="nav_collapse">
-
         <b-navbar-nav
           tag="div">
           <router-link class="nav-link" exact active-class="active" :to="{name:'Home', params:{page:1}}">Home<span
@@ -54,13 +53,10 @@
           </router-link>
           <router-link class="nav-link" active-class="active" :to="{name:'About'}">About <span class="sr-only"></span>
           </router-link>
-
-
         </b-navbar-nav>
         <div class="nav-link nav-search">
           <input type="search" v-model="search" placeholder="Search for title">
         </div>
-
       </b-collapse>
     </b-navbar>
 
@@ -79,37 +75,16 @@
       }
     },
     watch: {
-      $route (to, from){
-        store.dispatch('getFilteredFunStuff',
-          {
-            page: this.$route.params.page,
-            search: this.search
-          })
-      },
       search() {
-        store.dispatch('getFilteredFunStuff',
+        store.dispatch('getFilteredPosts',
           {
             page: this.$route.params.page,
             search: this.search
           })
       }
     },
-    created() {
-      // Initialize giggles
-      store.dispatch('getFunStuff');
-    },
     mounted() {
-      let self = this;
-
-      // TODO: get rid of this timeout
-      setTimeout(function () {
-        store.dispatch('getFilteredFunStuff',
-          {
-            page: self.$route.params.page,
-            search: ''
-          })
-
-      }, 400)
+      store.dispatch('getPosts');
     }
   }
 </script>
@@ -131,13 +106,6 @@
 
     .mouth {
       fill: white;
-      /*animation: giggle .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;*/
-      /*transform-origin: center;*/
-    }
-
-    .a {
-      /*animation: giggle .8s ease alternate infinite, turn .8s ease alternate-reverse infinite;*/
-      /*transform-origin: center;*/
     }
   }
 
