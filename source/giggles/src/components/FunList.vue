@@ -4,10 +4,10 @@
 
       <!-- /.row -->
       <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredFunStuffs">
+        <div class="col-sm-6 col-md-6 col-lg-3 fun-item" v-for="post in filteredPosts">
           <div class="fun-item-card"
                :class="getTags(post.description) | removeHash">
-            <router-link :to="{name:'Fun', params: {posts: filteredFunStuffs, id: post.id}}">
+            <router-link :to="{name:'Fun', params: {posts: filteredPosts, id: post.id}}">
               <div class="d-flex flex-column justify-content-between">
                 <div class="img-wrapper"
                      :style="{ 'background-image': 'url(' + post.link + ')' }">
@@ -50,8 +50,8 @@
       }
     },
     computed: {
-      filteredFunStuffs() {
-        return store.state.filteredFunStuffs;
+      filteredPosts() {
+        return store.state.filteredPosts;
       }
     },
     filters: {

@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     allFunStuffs: [],
-    filteredFunStuffs: [],
+    filteredPosts: [],
     page: 1,
     pageSize: 8,
     pageTotal: 8,
@@ -19,7 +19,7 @@ export const store = new Vuex.Store({
     },
     setFilteredFunStuff(state, posts) {
       this.state.pageTotal = posts.length;
-      this.state.filteredFunStuffs = posts.slice((this.state.page * this.state.pageSize)- this.state.pageSize, this.state.page * this.state.pageSize);
+      this.state.filteredPosts = posts.slice((this.state.page * this.state.pageSize)- this.state.pageSize, this.state.page * this.state.pageSize);
     }
   },
   actions: {
@@ -62,7 +62,7 @@ export const store = new Vuex.Store({
       return state.posts
     },
     getFilteredFunStuff(state) {
-      return state.filteredFunStuffs
+      return state.filteredPosts
     }
   },
   mounted() {
