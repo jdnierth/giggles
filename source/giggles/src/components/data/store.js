@@ -13,11 +13,11 @@ export const store = new Vuex.Store({
     search: ''
   },
   mutations: {
-    setFunStuff(state, posts) {
+    setPosts(state, posts) {
       this.state.pageTotal = posts.length;
       this.state.allFunStuffs = posts;
     },
-    setFilteredFunStuff(state, posts) {
+    getFilteredPosts(state, posts) {
       this.state.pageTotal = posts.length;
       this.state.filteredPosts = posts.slice((this.state.page * this.state.pageSize)- this.state.pageSize, this.state.page * this.state.pageSize);
     }
@@ -33,7 +33,7 @@ export const store = new Vuex.Store({
             }
         })
         .then(response => {
-          commit('setFunStuff', JSON.parse(response.bodyText).data.images);
+          commit('setPosts', JSON.parse(response.bodyText).data.images);
         }, error => {
           console.error(error);
         });
@@ -44,11 +44,11 @@ export const store = new Vuex.Store({
 
       // Return all if no search term was provided
       if (this.state.search == null || this.state.search === '') {
-        commit('setFilteredFunStuff', this.state.allFunStuffs);
+        commit('getFilteredPosts', this.state.allFunStuffs);
 
         // Return all posts where the title matches the search term.
       } else {
-        commit('setFilteredFunStuff', this.state.allFunStuffs.filter((post) => {
+        commit('getFilteredPosts', this.state.allFunStuffs.filter((post) => {
           if (post && post.title) {
             return post.title.match(this.state.search);
           }
